@@ -1,0 +1,21 @@
+section {
+    width: 100%;
+    background: white;
+}
+
+section > h2 {
+    margin: 0;
+    padding: 0.5em 3em 0;
+    color: #d94f5c;
+    background: url("../../../../public/images/logo-top.png") no-repeat 5px 5px;
+    min-height: 60px;
+    text-indent: -9999px;
+}
+
+section > button {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    border: none;
+    background-color: white;
+}

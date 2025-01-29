@@ -1,0 +1,19 @@
+<section>
+
+    <div class="header">
+        <img [src]="twimp.author.image" alt="Imagen de {{twimp.author.fullName}}">
+        <a [href]="twimp.author.url">by {{twimp.author.fullName}}</a>
+        <div class="date">Published on {{twimp.timestamp}}</div>
+    </div>
+
+    <div class="content">
+        {{twimp.content}}
+    </div>
+
+    <hr class="line">
+
+    <div class="fav">
+        <button class="icon icon-selected">&#10084;</button>
+    </div>
+
+</section>

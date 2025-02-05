@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { TwimpCardComponent } from "../twimp-card/twimp-card.component";
 import { AuthorModel } from '../../author/author.model';
 import { TwimpModel } from '../twimp.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'tweempus-twimp-list',
   standalone: true,
-  imports: [TwimpCardComponent],
+  imports: [TwimpCardComponent, CommonModule],
   templateUrl: './twimp-list.component.html',
   styleUrl: './twimp-list.component.css'
 })
@@ -22,4 +23,9 @@ export class TwimpListComponent {
     this.twimps.push(new TwimpModel('3', this.authors[0], this.text, '01/04/1970'));
     this.twimps.push(new TwimpModel('4', this.authors[0], this.text, '01/05/1970'));
   }
+
+  // use this without blocks
+  /*trackByTwimpId(index: number, twimp: any): any {
+    return twimp.id;
+  } */
 }

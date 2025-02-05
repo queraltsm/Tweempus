@@ -1,0 +1,16 @@
+
+@media (min-width: 768px) {
+    .twimps {
+        float: right;
+        width: 65%;
+        transition: .35s ease-in-out
+    }
+}
+
+@media (min-width: 1024px) {
+    .twimps {
+        width: 68%;
+    }
+}
+
+@media (min-width: 1200px) {}

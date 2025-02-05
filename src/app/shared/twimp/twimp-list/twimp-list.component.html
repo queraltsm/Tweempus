@@ -1,4 +1,20 @@
-<tweempus-twimp-card [twimp]="twimps[0]"></tweempus-twimp-card>
-<tweempus-twimp-card [twimp]="twimps[1]"></tweempus-twimp-card>
-<tweempus-twimp-card [twimp]="twimps[2]"></tweempus-twimp-card>
-<tweempus-twimp-card [twimp]="twimps[3]"></tweempus-twimp-card>
+<!--Example without blocks-->
+<!--<section>
+    <div *ngIf="twimps && twimps.length > 0; else noTwimps">
+        <div *ngFor="let twimp of twimps; trackBy: trackByTwimpId">
+            <tweempus-twimp-card [twimp]="twimp"></tweempus-twimp-card>
+        </div>
+    </div>
+    <ng-template #noTwimps>
+        <span>There are no twimps :(</span>
+    </ng-template>
+</section> -->
+
+<!-- With modern Angular @ blocks -->
+<section>
+    @for (twimp of twimps; track twimp.id) {
+    <tweempus-twimp-card [twimp]="twimp"></tweempus-twimp-card>
+    } @empty {
+    <span>There are no twimps :(</span>
+    }
+</section>

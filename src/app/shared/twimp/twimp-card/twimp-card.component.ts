@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { TwimpModel } from '../twimp.model';
+import { Directive } from '@angular/core';
 
 @Component({
   selector: 'tweempus-twimp-card',
@@ -9,6 +10,13 @@ import { TwimpModel } from '../twimp.model';
 })
 export class TwimpCardComponent {
 
+  @Directive({ selector: '[miDirectiva]' })
+
   @Input({required:true}) twimp!:TwimpModel
+
+  @HostListener('click')
+    onClick() {
+      alert('Click! :)');
+    }
 
 }

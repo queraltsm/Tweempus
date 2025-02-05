@@ -1,0 +1,23 @@
+.error-container {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .error-title {
+    font-size: 3em;
+    color: #d94f5c;
+  }
+  
+  .error-message,
+  .error-link {
+    font-size: 1.2em;
+  }
+  
+  .home-link {
+    color: #d94f5c;
+    text-decoration: none;
+  }
+  
+  .error-image {
+    margin-top: 30px;
+  }

@@ -81,14 +81,6 @@ section {
     transition: .35s ease-in-out
 }
 
-
-/* RESPONSIVE
-   ========================================================================= */
-
-
-/* Moviles en horizontal o tablets en vertical
-   ------------------------------------------------------------------------- */
-
 @media (min-width: 768px) {
     section {
         margin: 0 auto 1em auto;

@@ -6,14 +6,14 @@ nav {
     box-shadow: 0px 4px 5px 1px rgba(100, 100, 100, 0.35);
 }
 
-nav>ul {
+nav > ul {
     width: 100%;
     overflow: hidden;
     max-width: 1024px;
     margin: 0 auto;
 }
 
-ul>li {
+ul > li {
     display: inline-block;
     width: 50%;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ ul>li {
     text-align: center;
 }
 
-li>a {
+li > a {
     width: 100%;
     font-weight: bold;
     border-bottom: 4px solid #fff;

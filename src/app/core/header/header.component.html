@@ -2,5 +2,9 @@
     <a routerLink="/dashboard">
         <div class="logo-background"></div>
     </a>
-    <button>Regístrate</button>
+    @if (checkLogin()) {
+    <button (click)="logOut()">Log out</button>
+    } @else {
+    <button routerLink="/login">Sign up</button>
+    }
 </section>

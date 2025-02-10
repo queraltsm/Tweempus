@@ -1,22 +1,36 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { TwimpModel } from '../twimp.model';
 import { Directive } from '@angular/core';
-
+import { Router, RouterModule } from '@angular/router';
+import { NgClass } from '@angular/common';
+import { TwimpService } from '../twimp.service';
+import { map } from 'rxjs';
 @Component({
   selector: 'tweempus-twimp-card',
-  imports: [],
+  imports: [RouterModule, NgClass],
   templateUrl: './twimp-card.component.html',
   styleUrl: './twimp-card.component.css'
 })
 export class TwimpCardComponent {
 
-  @Directive({ selector: '[miDirectiva]' })
+  currentUser = localStorage.getItem("user-loggedin") ?? '';
+  currentUrl = '';
+
+  @Directive({ selector: '[favTwimp]' })
 
   @Input({required:true}) twimp!:TwimpModel
 
+  constructor(private twimpService: TwimpService, private router: Router){}
+
+  ngOnInit() {
+   this.currentUrl = this.router.url; 
+  }
+
   @HostListener('click')
     onClick() {
-      alert('Click! :)');
+      this.twimpService.editFavorite(this.currentUser, this.twimp.id).subscribe((response: boolean) => {
+        this.twimp.favorite = !this.twimp.favorite;
+      });
     }
-
 }
+

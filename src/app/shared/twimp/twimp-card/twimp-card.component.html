@@ -1,8 +1,10 @@
-<section miDirectiva>
+<section>
 
     <div class="header">
-        <img [src]="twimp.author.image" alt="Imagen de {{twimp.author.fullName}}">
-        <a [href]="twimp.author.url">by {{twimp.author.fullName}}</a>
+        <img [src]="twimp.author.image" alt="Image of a twimp">
+        <a [routerLink]="twimp.author.url">
+            {{ twimp.author.id === currentUser ? 'By me' : 'by ' + twimp.author.fullName }}
+        </a>
         <div class="date">Published on {{twimp.timestamp}}</div>
     </div>
 
@@ -12,8 +14,9 @@
 
     <hr class="line">
 
+    @if (!currentUrl.includes("my-twimps")) {
     <div class="fav">
-        <button class="icon icon-selected">&#10084;</button>
+        <button class="icon" [ngClass]="{'icon-selected': twimp.favorite}" favTwimp>&#10084;</button>
     </div>
-
+    }
 </section>

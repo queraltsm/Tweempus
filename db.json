@@ -1,0 +1,89 @@
+{
+  "authors": [
+    {
+      "id": "1",
+      "fullName": "Frank Bennett",
+      "image": "https://randomuser.me/api/portraits/men/83.jpg"
+    },
+    {
+      "id": "2",
+      "fullName": "Oliver Fletcher",
+      "image": "https://randomuser.me/api/portraits/men/82.jpg"
+    }
+  ],
+  "authenticated": [
+    {
+      "id": "NsotY1739050315559",
+      "author": "1"
+    },
+    {
+      "id": "ANiro1739052515044",
+      "author": "1"
+    },
+    {
+      "id": "HDdXw1739131193790",
+      "author": "1"
+    },
+    {
+      "id": "RWYAw1739140548970",
+      "author": "1"
+    },
+    {
+      "id": "akAl31739221987799",
+      "author": "1"
+    },
+    {
+      "id": "2z5hC1739222803981",
+      "author": "1"
+    },
+    {
+      "id": "aleTh1739225309733",
+      "author": "1"
+    }
+  ],
+  "twimps": [
+    {
+      "id": "Mx5Cf1483389903318",
+      "author": "1",
+      "by": "Charlotte Bennett",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam efficitur sodales libero, sit amet posuere arcu consectetur ut. Nam volutpat ligula ac nunc consectetur vestibulum.",
+      "timestamp": "01-01-1970"
+    },
+    {
+      "id": "T4qdo1483390015454",
+      "author": "2",
+      "by": "Oliver Fletcher",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam efficitur sodales libero, sit amet posuere arcu consectetur ut. Nam volutpat ligula ac nunc consectetur vestibulum.",
+      "timestamp": "01-01-1970"
+    }
+  ],
+  "author-favorites": [
+    {
+      "id": "1",
+      "twimps": [
+        "T4qdo1483390015454",
+        "Mx5Cf1483389903318"
+      ]
+    },
+    {
+      "id": "2",
+      "twimps": [
+        "Mx5Cf1483389903318"
+      ]
+    }
+  ],
+  "author-twimps": [
+    {
+      "id": "1",
+      "twimps": [
+        "Mx5Cf1483389903318"
+      ]
+    },
+    {
+      "id": "2",
+      "twimps": [
+        "T4qdo1483390015454"
+      ]
+    }
+  ]
+}

@@ -5,10 +5,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyTwimpsComponent } from './profile/my-twimps/my-twimps.component';
 import { FavouriteTwimpsComponent } from './profile/favourite-twimps/favourite-twimps.component';
 import { ErrorComponent } from './error/error.component';
+import { authGuard } from './core/auth.guard';
 
 export const routes: Routes = [
     {path:'', redirectTo:'/dashboard', pathMatch: 'full'},
-    {path:'dashboard',component:DashboardComponent, title:'Dashboard | Tweempus'},
+    {path:'dashboard',component:DashboardComponent, title:'Dashboard | Tweempus', canActivate: [authGuard]},
     {path:'login',component:LoginComponent, title:'Login | Tweempus'},
     { 
         path:'profile',

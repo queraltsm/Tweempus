@@ -15,9 +15,8 @@ export const routes: Routes = [
     {path:'login',component:LoginComponent, title:'Login | Tweempus'},
     {path:'signup',component:SignupComponent, title:'Signup | Tweempus'},
     {path:'create-twimp',component:CreateTwimpComponent, title:'Create Twimp | Tweempus'},
-    {path:'profile/:id',component:ProfileComponent, title:'User Profile | Tweempus'},
     { 
-        path:'profile',
+        path:'profile/:id',
         component:ProfileComponent,
         children:[
             {

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AuthenticationService } from '../authentication.service';
-
 @Component({
   selector: 'tweempus-nav',
   standalone: true,
@@ -13,11 +11,11 @@ import { AuthenticationService } from '../authentication.service';
 export class NavComponent {
   idAuthor: string | null = null;
 
-  constructor(private authService: AuthenticationService) { }
+  constructor() { }
 
   checkLogin() {
-    if (this.authService.token != null) {
-      this.idAuthor = this.authService.token.idAuthor;
+    if (localStorage.getItem("token-loggedin") != null) {
+      this.idAuthor =  localStorage.getItem("user-loggedin");
       return true;
     }
     this.idAuthor = null;

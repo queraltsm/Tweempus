@@ -43,6 +43,9 @@ export class AuthenticationService {
     this.deleteSession().subscribe(() => {
       this.token = null;
       this.router.navigate(['/login']);
+      localStorage.removeItem("token-loggedin");
+      localStorage.removeItem("user-loggedin");
+
     });
   }
 

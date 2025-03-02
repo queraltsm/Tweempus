@@ -5,7 +5,7 @@
         <a [routerLink]="twimp.author.url">
             {{ twimp.author.id === currentUser ? 'By me' : 'By ' + twimp.author.fullName }}
         </a>
-        <div class="date">Published on {{twimp.timestamp}}</div>
+        <div class="date">Published on {{ twimp.timestamp | customTimestampDate:'long' }}</div>
     </div>
 
     <div class="content">

@@ -1,3 +1,4 @@
+import { Timestamp } from 'rxjs';
 import { AuthorModel } from '../author/author.model';
 
 export class TwimpModel {

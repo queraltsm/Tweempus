@@ -34,7 +34,7 @@ export class CreateTwimpComponent {
 
   createTwimp(form: NewTwimpForm) {
     const authorLoggedId = this.authService.token!.idAuthor;
-    const twimpDate = new Date().toLocaleDateString().replace(/\//g, '-');
+    const twimpDate = new Date().getTime().toString();  
     const twimpText = form.value.content!;
 
     this.twimpService.getTwimps().pipe(

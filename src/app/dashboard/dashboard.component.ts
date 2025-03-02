@@ -6,6 +6,7 @@ import { TwimpListComponent } from '../shared/twimp/twimp-list/twimp-list.compon
 import { TwimpService } from '../shared/twimp/twimp.service';
 import { TwimpModel } from '../shared/twimp/twimp.model';
 import { AuthenticationService } from '../core/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tweempus-dashboard',
@@ -19,7 +20,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private authorService: AuthorService,
     private twimpService: TwimpService,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -45,4 +47,9 @@ export class DashboardComponent implements OnInit {
       }
     })
   }
+
+  createTwimp() {
+    this.router.navigate(['/create-twimp']);
+  }
+  
 }

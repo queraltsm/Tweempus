@@ -5,9 +5,10 @@ import { Router, RouterModule } from '@angular/router';
 import { NgClass } from '@angular/common';
 import { TwimpService } from '../twimp.service';
 import { map } from 'rxjs';
+import { CustomTimestampDatePipe } from '../../custom-timestamp-date.pipe';
 @Component({
   selector: 'tweempus-twimp-card',
-  imports: [RouterModule, NgClass],
+  imports: [RouterModule, NgClass, CustomTimestampDatePipe],
   templateUrl: './twimp-card.component.html',
   styleUrl: './twimp-card.component.css'
 })

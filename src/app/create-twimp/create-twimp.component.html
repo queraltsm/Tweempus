@@ -1,0 +1,20 @@
+<section>
+    <form [formGroup]="newTwimpForm" (ngSubmit)="createTwimp(newTwimpForm)">
+        <label>
+            <h3>Create your Twimp:</h3>
+        </label>
+        @if(newTwimpForm.get('content')?.hasError('required') && !newTwimpForm.get('content')?.pristine) {
+        <div class="error">
+            A Twimp must contain some text
+        </div>
+        }
+        @if(newTwimpForm.get('content')?.hasError('maxlength') && !newTwimpForm.get('content')?.pristine) {
+        <div class="error">
+            A Twimp can only contain a maximum of 140 characters
+        </div>
+        }
+        <textarea placeholder="Maximum 140 characters" formControlName="content"></textarea>
+        <button type="submit" [disabled]="newTwimpForm.invalid">Post</button>
+    </form>
+
+</section>

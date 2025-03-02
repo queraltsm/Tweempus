@@ -1,7 +1,18 @@
 <section>
-
     <img src="images/logo-login.png">
-    <div>Click the Log-In button to enter Tweempus with your Google account</div>
-    <button (click)="logIn()">Log-in</button>
-
+    <form [formGroup]="userForm" (ngSubmit)="logIn(userForm)">
+        <label>Introduce your nick and sign in</label>
+        @if(userForm.get('idAuthor')?.hasError('required') && !userForm.get('idAuthor')?.pristine) {
+        <div class="error">
+            Nick is required!
+        </div>
+        }
+        @if(userNoExist) {
+        <div class="error">
+            This nick does not exist
+        </div>
+        }
+        <input type="text" formControlName="idAuthor" placeholder="Place your nick here">
+        <button type="submit" [disabled]="userForm.invalid">Log-In</button>
+    </form>
 </section>

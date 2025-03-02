@@ -12,7 +12,7 @@
 
 <!-- With modern Angular @ blocks -->
 <section>
-    @for (twimp of twimps; track twimp.id) {
+    @for (twimp of twimps | sortBy; track twimp.id) {
     <tweempus-twimp-card [twimp]="twimp"></tweempus-twimp-card>
     } @empty {
     <span>There are no twimps :(</span>

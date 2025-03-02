@@ -9,6 +9,16 @@
       "id": "2",
       "fullName": "Oliver Fletcher",
       "image": "https://randomuser.me/api/portraits/men/82.jpg"
+    },
+    {
+      "id": "3",
+      "fullName": "Queralt",
+      "image": "https://th.bing.com/th/id/OIP.zGuKKWkWHn8k4oY1La-JIgHaG6?rs=1&pid=ImgDetMain"
+    },
+    {
+      "id": "Queralt",
+      "fullName": "Queralt Sosa",
+      "image": "https://img.freepik.com/foto-gratis/mujer-hermosa-joven-mirando-camara-chica-moda-verano-casual-camiseta-blanca-pantalones-cortos-hembra-positiva-muestra-emociones-faciales-modelo-divertido-aislado-amarillo_158538-15796.jpg"
     }
   ],
   "authenticated": [
@@ -35,10 +45,6 @@
     {
       "id": "2z5hC1739222803981",
       "author": "1"
-    },
-    {
-      "id": "aleTh1739225309733",
-      "author": "1"
     }
   ],
   "twimps": [
@@ -60,16 +66,23 @@
   "author-favorites": [
     {
       "id": "1",
-      "twimps": [
-        "T4qdo1483390015454",
-        "Mx5Cf1483389903318"
-      ]
+      "twimps": []
     },
     {
       "id": "2",
       "twimps": [
         "Mx5Cf1483389903318"
       ]
+    },
+    {
+      "id": "3",
+      "twimps": [
+        "Mx5Cf1483389903318"
+      ]
+    },
+    {
+      "id": "Queralt",
+      "twimps": []
     }
   ],
   "author-twimps": [

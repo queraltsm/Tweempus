@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { catchError, concatMap, Observable, throwError } from 'rxjs';
 import { AuthorService } from '../shared/author/author.service';
 import { TokenModel } from './token.model';
+import { environment } from '../../environments/environment';
 
 type DBSession = {
   id: string;
@@ -14,7 +15,7 @@ type DBSession = {
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private url: string = 'http://localhost:3000/authenticated';
+  private url: string = `${environment.url}/authenticated`;
 
   token: TokenModel | null = null;
 

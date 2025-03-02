@@ -1,0 +1,47 @@
+<section>
+
+    <img src="images/google-icon.png">
+    <form [formGroup]="newUserForm" (ngSubmit)="signUp(newUserForm)">
+        <!-- NICK -->
+        <label>Enter your nickname:*</label>
+        @if(newUserForm.get('idAuthor')?.hasError('required') && !newUserForm.get('idAuthor')?.pristine) {
+        <div class="error">
+            Nickname is required
+        </div>
+        }
+        @if(newUserForm.get('idAuthor')?.hasError('invalidNick') && !newUserForm.get('idAuthor')?.pristine) {
+        <div class="error">
+            Nickname can only contain letters and numbers
+        </div>
+        }
+        @if(userAlreadyExist) {
+        <div class="error">
+            A user with this nickname already exists
+        </div>
+        }
+        <input type="text" formControlName="idAuthor">
+        <!-- NICK -->
+
+        <!-- FULL NAME -->
+        <label>Enter your full name:*</label>
+        @if(newUserForm.get('fullName')?.hasError('required') && !newUserForm.get('fullName')?.pristine) {
+        <div class="error">
+            Full name is required
+        </div>
+        }
+        @if(newUserForm.get('fullName')?.hasError('minlength') && !newUserForm.get('fullName')?.pristine) {
+        <div class="error">
+            Your name must be at least 3 characters long
+        </div>
+        }
+        <input type="text" formControlName="fullName">
+        <!-- FULL NAME -->
+
+        <!-- IMAGE -->
+        <label>Add a URL for your profile picture:</label>
+        <input type="url" formControlName="image">
+        <!-- IMAGE -->
+        <button type="submit" [disabled]="newUserForm.invalid">Sign Up</button>
+    </form>
+
+</section>

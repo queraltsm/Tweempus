@@ -5,6 +5,7 @@ import { AuthorService } from '../shared/author/author.service';
 import { TwimpListComponent } from '../shared/twimp/twimp-list/twimp-list.component';
 import { TwimpService } from '../shared/twimp/twimp.service';
 import { TwimpModel } from '../shared/twimp/twimp.model';
+import { AuthenticationService } from '../core/authentication.service';
 
 @Component({
   selector: 'tweempus-dashboard',
@@ -17,7 +18,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private authorService: AuthorService,
-    private twimpService: TwimpService
+    private twimpService: TwimpService,
+    private authService: AuthenticationService
   ) { }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class DashboardComponent implements OnInit {
         twimp.author = author;
         return combineLatest([
           of(twimp),
-          this.twimpService.getFavoritesByAuthor(author.id, twimp.id).pipe(
+          this.twimpService.getFavoritesByAuthor(this.authService.token!.idAuthor, twimp.id).pipe(
             map(favorite => favorite ?? false)
           )
         ])

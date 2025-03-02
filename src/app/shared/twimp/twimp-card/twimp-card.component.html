@@ -3,7 +3,7 @@
     <div class="header">
         <img [src]="twimp.author.image" alt="Image of a twimp">
         <a [routerLink]="twimp.author.url">
-            {{ twimp.author.id === currentUser ? 'By me' : 'by ' + twimp.author.fullName }}
+            {{ twimp.author.id === currentUser ? 'By me' : 'By ' + twimp.author.fullName }}
         </a>
         <div class="date">Published on {{twimp.timestamp}}</div>
     </div>

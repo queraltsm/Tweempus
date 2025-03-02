@@ -1,7 +1,11 @@
 <section>
 
     <section>
-        <tweempus-author-card></tweempus-author-card>
+        @defer (when author) {
+        <tweempus-author-card [author]="author!"></tweempus-author-card>
+        } @placeholder {
+        <tweempus-author-card [author]="authorPlaceholder"></tweempus-author-card>
+        }
     </section>
 
     <section class="twimps">

@@ -18,10 +18,7 @@ export class FavouriteTwimpsComponent {
     constructor(
       private authorService: AuthorService,
       private twimpService: TwimpService
-    ) { }
-  
-
-  ngOnInit() {
+    ) { 
     this.twimpService.getTwimps().pipe(
       concatMap((twimps) => twimps),
       concatMap((twimp) => combineLatest([

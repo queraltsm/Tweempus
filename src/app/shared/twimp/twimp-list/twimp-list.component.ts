@@ -3,11 +3,11 @@ import { TwimpCardComponent } from "../twimp-card/twimp-card.component";
 import { AuthorModel } from '../../author/author.model';
 import { TwimpModel } from '../twimp.model';
 import { CommonModule } from '@angular/common';
-
+import { SortByPipe } from '../../sort-by.pipe';
 @Component({
   selector: 'tweempus-twimp-list',
   standalone: true,
-  imports: [TwimpCardComponent],
+  imports: [TwimpCardComponent, SortByPipe],
   templateUrl: './twimp-list.component.html',
   styleUrl: './twimp-list.component.css'
 })

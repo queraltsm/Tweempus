@@ -4,6 +4,7 @@ import { TwimpModel } from '../../shared/twimp/twimp.model';
 import { AuthorService } from '../../shared/author/author.service';
 import { TwimpService } from '../../shared/twimp/twimp.service';
 import { combineLatest, concatMap, of, map } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'tweempus-my-twimps',
   imports: [TwimpListComponent],
@@ -13,14 +14,13 @@ import { combineLatest, concatMap, of, map } from 'rxjs';
 export class MyTwimpsComponent {
 
     twimpList: TwimpModel[] = [];
-    currentAuthor = localStorage.getItem("user-loggedin") ?? '';
   
       constructor(
+        private route: ActivatedRoute,
         private authorService: AuthorService,
         private twimpService: TwimpService
-      ) { }
-      
-      ngOnInit() {
+      ) { 
+        const currentAuthor = this.route.parent!.snapshot.params['id'];
         this.twimpService.getTwimps().pipe(
           concatMap((twimps) => twimps),
           concatMap((twimp) => combineLatest([
@@ -33,7 +33,7 @@ export class MyTwimpsComponent {
           })
         ).subscribe({
           next: (twimp) => {
-            if (twimp.author.id === this.currentAuthor) { 
+            if (twimp.author.id === currentAuthor) { 
               this.twimpList.push(twimp);
             }
           },
@@ -42,6 +42,4 @@ export class MyTwimpsComponent {
           }
         });
       }
-
-      
-}
+  }

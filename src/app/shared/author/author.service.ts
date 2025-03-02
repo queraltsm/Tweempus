@@ -2,13 +2,26 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, map, throwError } from 'rxjs';
 import { AuthorModel } from './author.model';
+import { environment } from '../../../environments/environment';
+
+type DBAuthor = {
+  id: string;
+  fullName: string;
+  image: string;
+}
+
+type DBFavoriteEntry = {
+  id: string;
+  twimps: string[];
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorService {
 
-  private url: string = 'http://localhost:3000/authors';
+  private url: string = `${environment.url}/authors`;
+  private urlFavorite: string = `${environment.url}/author-favorites`;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,6 +36,20 @@ export class AuthorService {
       }),
       catchError(this.handleError)
     )
+  }
+
+  setAuthor(idAuthor: string, fullName: string, image: string): Observable<DBAuthor> {
+    const dbAuthor: DBAuthor = { 'id': idAuthor, 'fullName': fullName, 'image': image };
+    return this.httpClient.post<DBAuthor>(this.url, dbAuthor).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  createFavorite(idAuthor: string): Observable<DBFavoriteEntry> {
+    const dbAuthorFav: DBFavoriteEntry = { 'id': idAuthor, 'twimps': [] };
+    return this.httpClient.post<DBFavoriteEntry>(this.urlFavorite, dbAuthorFav).pipe(
+      catchError(this.handleError)
+    );
   }
 
   handleError(error: any) {

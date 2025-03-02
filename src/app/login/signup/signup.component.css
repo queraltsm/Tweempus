@@ -8,15 +8,15 @@ section {
     min-height: 300px;
 }
 
-section > img {
+img {
     margin: 0 auto 1em auto;
     display: block;
     width: 100%;
     max-width: 150px;
+    border-radius: 50%;
 }
 
 form > label {
-    text-align: center;
     font-size: 98%;
     word-spacing: -0.4pt;
     display: block;
@@ -25,7 +25,6 @@ form > label {
 }
 
 form > .error {
-    text-align: center;
     font-size: 75%;
     word-spacing: -0.4pt;
     margin: 20px auto;
@@ -41,6 +40,7 @@ form > input {
     border: none;
     border-bottom: solid 2px #c9c9c9;
     transition: border 0.3s;
+    width: 60%;
 }
 
 form > input:focus {
@@ -51,7 +51,7 @@ form > button {
     width: 80%;
     height: 50px;
     background-color: #d94f5c;
-    margin: 20px auto;
+    margin: 30px auto 20px;
     display: block;
     color: white;
     border: none;
@@ -71,47 +71,7 @@ form > button:active {
     background-color: #c64652;
 }
 
-section {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0)
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none
-    }
-}
-
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        -ms-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0)
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        -ms-transform: none;
-        transform: none
-    }
-}
-
-section {
-    -webkit-animation-name: fadeInLeft;
-    animation-name: fadeInLeft
-}
-
-   @media (min-width: 768px) {
+@media (min-width: 768px) {
     section {
         width: 60%;
     }
